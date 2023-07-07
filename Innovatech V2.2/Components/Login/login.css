@@ -1,0 +1,22 @@
+body {
+	background-image: url("../../Shared/Images/background.jpg");
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.input-field i {
+	top: 50%;
+}
+
+/* .container {
+	margin-top: 15vh;
+} */
+
+.alert-message {
+	position: fixed;
+	right: 1%;
+	top: 10%;
+	display: none;
+}

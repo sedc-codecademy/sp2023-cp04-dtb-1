@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Posts</title>
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+		integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+	<link type="text/css" rel="stylesheet" href="../global.css" />
+	<link type="text/css" rel="stylesheet" href="../Login-SignUp/login-signup.css" />
+	<link type="text/css" rel="stylesheet" href="posts.css" />
+</head>
+
+<body>
+
+	<div class="page-container">
+		<div class="content-wrap">
+			<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="posts.html">InnovaTech</a>
+					<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item active">
+								<a class="nav-link" aria-current="page" href="posts.html">Posts</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="../Newsletter/newsletter.html">Newsletter</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="../About/about.html">About</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right" id="login-signup-buttons">
+							<li class="nav-item">
+								<a class="nav-link" href="../Login/login.html">Login</a>
+							</li>
+							<!-- <li class="nav-item">
+								<a class="nav-link" href="../SignUp/signup.html">Sign up</a>
+							</li> -->
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="nav-item">
+								<a class="nav-link" id="logoutBtn" hidden>Logout</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+
+		<div class="container" id="add-new-post-form">
+			<div class="forms">
+				<div class="form addPost">
+					<span class="title">New Post</span>
+					<form class="addPost-form" action="#">
+						<div class="input-field">
+							<input type="text" placeholder="Enter a title" data-target="#newPost" data-toggle="modal"
+								required>
+							<i class="uil uil-pen icon"></i>
+						</div>
+						<div class="row justify-content-around">
+							<div class="input-field button col-5">
+								<input id="btnAddDescription" class="btn w-100 buttons" type="button"
+									value="Add Description" data-target="#newPost" data-toggle="modal">
+							</div>
+
+							<div class="input-field button col-5">
+								<input id="btnAddImage" class="btn w-100 buttons" type="button" value="Add Image"
+									data-target="#newPost" data-toggle="modal">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="newPost" tabindex="-1" role="dialog" aria-labelledby="createNewPostLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="container modal-content">
+					<div class="forms">
+						<div class="form">
+							<div class="modal-header">
+								<span class="modal-title title">New Post</span>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<i aria-hidden="true" class="fa-solid fa-xmark fa-l"></i>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form action="" id="addPostForm">
+									<div class="input-field">
+										<input type="text" placeholder="Enter a title" required>
+										<i class="uil uil-pen icon"></i>
+									</div>
+
+									<div class="input-field">
+										<input type="text" placeholder="Enter a description" required>
+										<i class="uil uil-align-left-justify icon"></i>
+									</div>
+
+									<div class="input-field">
+										<input type="text" placeholder="Enter a tags" required>
+										<i class="uil uil-tag icon"></i>
+									</div>
+
+									<br>
+
+									<div class="input-group">
+										<div class="custom-file">
+											<input id="chooseFileInput" type="file" class="custom-file-input">
+											<label id="chosenFileLabel" class="custom-file-label">Choose file</label>
+										</div>
+									</div>
+
+									<br>
+
+									<img id="imagePreview" src="#" />
+
+
+									<div class="row justify-content-around">
+										<div class="input-field button col-5">
+											<input id="createNewPostBtn" class="btn w-100 buttons" type="button"
+												value="Create" data-dismiss="modal">
+										</div>
+
+										<div class="input-field button col-5">
+											<input class="btn w-100 buttons" id="addPostModalCloseBtn"
+												data-dismiss="modal" type="button" value="Cancel">
+										</div>
+									</div>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="filterByTags" class="container w-100 p-2">
+			<form action="#" id="post-filter-form" class="row align-items-center justify-content-around">
+				<div>
+					<div>
+						<select class="form-control" id="post-filter-month">
+							<option value="" disabled selected>Select month</option>
+							<option></option>
+							<option>Jan</option>
+							<option>Feb</option>
+							<option>Mar</option>
+							<option>Apr</option>
+							<option>May</option>
+							<option>Jun</option>
+							<option>Jul</option>
+							<option>Aug</option>
+							<option>Sep</option>
+							<option>Oct</option>
+							<option>Nov</option>
+							<option>Dec</option>
+						</select>
+					</div>
+				</div>
+
+				<div>
+					<!-- <input placeholder="Time" class="form-control" id="post-filter-time" type="text"> -->
+					<select class="form-control" id="post-filter-time">
+						<option value="desc" selected>New to old</option>
+						<option value="asc">Old to new</option>
+					</select>
+				</div>
+
+				<div>
+					<input placeholder="Tag" id="post-filter-tag" class="form-control" type="text">
+				</div>
+				<div>
+					<button type="button" id="post-filter-button" class="btn buttons pl-4 pr-4">Filter</button>
+				</div>
+			</form>
+		</div>
+
+		<hr />
+
+		<div id="blogCard"></div>
+
+		<div id="loader"></div>
+
+		<button id="loadMoreButton" class="buttons">Load More</button>
+		<button class="btn" class="buttons" id="backToTopButton">Top</button>
+
+		<!-- Messages -->
+
+		<div class="alert alert-danger alert-message" id="logout-success-alert">
+			Successfully<strong> logged out!</strong>
+		</div>
+
+		<div class="alert alert-danger alert-message" id="fields-not-filled-alert">
+			Please fill in all <strong>required</strong> fields.
+		</div>
+
+	</div>
+
+	<div class="container" id="add-comment-form" style="display: none;">
+		<div class="forms">
+			<div class="form addComent">
+				<span class="title">Leave comment</span>
+				<form class="addComent-form" action="#">
+					<div class="input-field">
+						<input id="name" type="text" placeholder="Enter a name" required>
+						<i class="uil uil-pen icon"></i>
+					</div>
+					<div class="input-field">
+						<input id="comments" type="text" placeholder="Add Comment" required>
+						<i class="fa-regular fa-comment fa-xl"></i>
+					</div>
+					<div class="row justify-content-around">
+						<div class="input-field button col-5">
+							<input id="btnAddComment" class="btn w-100 buttons" type="button" value="Add Comment">
+						</div>
+						<div class="input-field button col-5">
+							<input id="cancelButton" class="btn w-100 buttons" type="button" value="Cancel">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div id="overlay"></div>
+
+	<div class="alert alert-success alert-message" id="comment-success-alert" style="display: none;">
+		Successfully<strong> Comment added!</strong>
+	</div>
+
+	<script src="https://kit.fontawesome.com/fd365c5544.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+		integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+		integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+		crossorigin="anonymous"></script>
+	<script src="posts.js"></script>
+	<script src="../script.js"></script>
+</body>
+
+</html>

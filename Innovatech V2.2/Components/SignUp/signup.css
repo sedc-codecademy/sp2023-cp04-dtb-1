@@ -1,0 +1,26 @@
+body {
+	background-image: url("../../Shared/Images/background.jpg");
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+hr {
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
+
+.signin {
+	text-align: center;
+}
+
+.container {
+	margin-top: 10vh;
+}
+
+@media only screen and (max-height: 850px) {
+	.container {
+		margin-top: 3vh;
+	}
+}
